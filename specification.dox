@@ -1,0 +1,49 @@
+/** \page Specification 
+This lab uses CGI (Common Gateway Interface) to produce a GUI for a calculator program. The Calculator will accept two integers as input and return a formatted webpage displaying the results of multiplication, addition, subtraction or integer division of the input depending on the users choice of operations. It will allow square roots. The calculator will also allow the user to swap the integers.
+*/
+/** \page Analysis
+A HTML webpage with a form is presented to the user. The form data is sent to a CGI program written in C++. It can be retrieved using the following line of code:
+\code{.cpp}
+getenv("QUERY_STRING");
+\endcode
+
+The data can be placed in a string variable which gets parsed using a \code{.cpp} std::istringstream \endcode variable as such:
+\code{.cpp}
+data=getenv("QUERY_STRING");
+char ch;
+std::istringstream iss = data;
+iss >> ch >> ch >> 
+    firstInt >> ch >> ch >> ch >> 
+    secondInt >> ch >>ch >> ch >>
+    operation;
+\endcode
+
+This will take the input string and parse it into appropriate varibles. 
+
+The addition, subtraction, multiplication and division will be done by seperate functions. The square root function will use the babylonian algorithm. 
+
+The C++ program will output a HTML file with the completed calculation result.
+*/
+/** \page "HTML Code"
+The HTML code used to produce the form.
+
+\verbinclude calc.html
+*/
+/** \page "Test Cases"
+\image latex ../tc_add.png "Addition Input" width =4in
+\image latex ../tc_add_r.png "Addition Result" width =4in
+\image latex ../tc_sub.png "Subtraction Input" width =4in
+\image latex ../tc_sub_r.png "Subtraction Result" width =4in
+\image latex ../tc_div.png "Division Input" width =4in
+\image latex ../tc_div_r.png "Division Result" width =4in
+\image latex ../tc_div_0.png "Division by 0 Input" width =4in
+\image latex ../tc_div_0_r.png "Division by 0 Result" width =4in
+\image latex ../tc_mul_ns.png "Multiplication Input" width =4in
+\image latex ../tc_mul_ns_r.png "Multiplication Result" width =4in
+\image latex ../tc_mul_s.png "Multiplication with swap Input" width =4in
+\image latex ../tc_mul_s_r.png "Multiplication with swap Result" width =4in
+\image latex ../tc_roo.png "Square root Input" width =4in
+\image latex ../tc_roo_r.png "Square root Result" width =4in
+\image latex ../tc_ro2.png "Square root of non square Input" width =4in
+\image latex ../tc_ro2_r.png "Square root of non square Result" width =4in
+*/

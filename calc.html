@@ -1,0 +1,40 @@
+<html>
+    <head >
+	<title>C++ Calculator</title>
+    </head>
+    <style>
+	body {text-align:center;}
+    </style>
+    <body>
+	<h1 >Calculator</h1>
+	<h4 >Please use only whole numbers</h4>
+	<form action="/cgi-bin/lab3.cgi">
+	    <table align=center>
+		<tr align=center>
+		    <td>INPUT 1</td>
+		    <td>INPUT 2</td>
+		</tr>
+		<tr>
+		    <td><input name="m" size="5"></td>
+		    <td><input name="n" size="5"></td>
+		</tr>
+	    </table>
+	    <div> 
+		<input type="radio" name="o" value="a" checked>Add
+		<input type="radio" name="o" value="s">Subtract
+		<input type="radio" name="o" value="m">Multiply
+		<input type="radio" name="o" value="d">Divide
+		<input type="radio" name="o" value="r">Square Root
+	    </div>
+	    </br>
+	    <div>Swap integers?</div>
+	    
+	    <div> 
+		<input type="radio" name="s" value="y">Swap
+		<input type="radio" name="s" value="n" checked>Don't swap
+	    </div>
+	    </br>
+	    <div> <input type= "submit" value="Calculate!"></div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,1 @@
+g++ lab3.cpp add.cpp subtract.cpp multiply.cpp divide.cpp swapInts.cpp root.cpp -o ~/cgi-bin/lab3.cgi./compile
